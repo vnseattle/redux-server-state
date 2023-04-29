@@ -1,0 +1,16 @@
+{
+  "name": "redux-server-state",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "redux",
+    "server-state",
+    "no-reducer"
+  ],
+  "author": "dev9x",
+  "license": "ISC"
+}

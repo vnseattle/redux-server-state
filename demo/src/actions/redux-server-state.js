@@ -1,6 +1,3 @@
-import { create } from 'no-reducer';
-import axios from "axios"
-
 /*************************************************************
 Redux Server State
 © 2023 Henry Nguyen a.k.a Dev9x
@@ -8,6 +5,8 @@ This library is designed to retrieve the results from an API request
 and store them as a state in the reducer on the client-side.
 ************************************************************/
 
+import { create } from 'no-reducer';
+import axios from "axios"
 
 // Object for making HTTP requests using different methods
 const stateRequest =  {
@@ -78,6 +77,7 @@ const handleReturn = (url, config, res) => {
         if (config && config.root) {
             const isArray = Array.isArray(res.data[config.root]);
             if (isArray) {
+                console.log(isArray)
                 // If the data is an array with only one element,
                 // dispatch the handleStateName function with the URL, the single element, and the config
                 if (res.data[config.root].length === 1) {

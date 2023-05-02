@@ -60,7 +60,7 @@ const handleCallback = (callback, res, url, config) => {
         if(callback){
             // If a callback function is provided, 
             //dispatch the callback with the response
-            dispatch(callback(res));
+            dispatch(callback(res,dispatch));
         }else{
             // If no callback function is provided, 
             // dispatch the handleReturn function with the URL, config, and response

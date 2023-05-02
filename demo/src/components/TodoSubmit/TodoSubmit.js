@@ -1,6 +1,6 @@
 import React, {useState } from 'react';
 import { connect } from "react-redux";
-import {addNewItem, addSampleItem} from "./../../actions/basicAction"
+import {addNewItem , addNewItemToTop} from "./../../actions/basicAction"
 
 function TodoSubmit(props) {
   const [newTodo, setNewTodo] = useState('');
@@ -10,8 +10,11 @@ function TodoSubmit(props) {
   };
 
   const handleAddTodo = () => {
-    props.addNewItem(newTodo)
-    setNewTodo("")
+    if(newTodo.length>0 ){
+      props.addNewItem(newTodo)
+      setNewTodo("")
+    }
+   
   };
 
 
@@ -36,11 +39,11 @@ function TodoSubmit(props) {
           Add
         </button>
       </div>
-      <button onClick={()=> props.addSampleItem()} className="button">
-          Add Sample Task
+      <button onClick={()=> props.addNewItemToTop(newTodo)} className="button2">
+          Add To Top
         </button>
     </div>
   );
 }
 
-export default connect(null,{addNewItem, addSampleItem})(TodoSubmit);
+export default connect(null,{addNewItem, addNewItemToTop})(TodoSubmit);

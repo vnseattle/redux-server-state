@@ -19,11 +19,6 @@
       "id": 4,
       "title": "Schedule dentist appointment",
       "completed": false
-    },
-    {
-      "title": "My new todo",
-      "completed": false,
-      "id": 5
     }
   ]
 }

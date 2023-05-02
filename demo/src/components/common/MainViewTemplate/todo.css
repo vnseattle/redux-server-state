@@ -100,3 +100,8 @@
     padding: 20px;
     overflow: scroll;
   }
+
+  .button2 {
+    background: #c18e31;
+    margin-right: 5px;
+  }

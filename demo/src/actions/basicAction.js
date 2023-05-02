@@ -1,4 +1,4 @@
-import state,{append, create} from "./redux-server-state"
+import state,{append, replace} from "./redux-server-state"
 const API = "http://localhost:3000"
 
 
@@ -16,6 +16,7 @@ export const addNewItem = (title) => state.post(`${API}/todos`,{title,completed:
 )
 
 
+
 /**
 These returns are an array without a key object.
 The endpoint cannot be determined the reducer's name.
@@ -29,14 +30,8 @@ export const setCompletedItem = (todo) => state.put(`${API}/todos/${todo.id}`,{.
 export const deleteItem = (todo) => state.delete(`${API}/todos/${todo.id}`, null ,cfg)
 
 
+/** Custom actions */
 
-
-export const addSampleItem = () => {
-    return async (dispatch) => {
-        try {
-            await dispatch(append('todos', [{id:999, title:"This task is not stored in Database", completed:true}]))
-        } catch (err) {
-            console.log(err)
-        }
-    };
-}
+export const addNewItemToTop = (title) => state.post(`${API}/todos`,{title,completed:false},null,(res) =>
+        replace('todos',[res.data.pop(), ...res.data])
+)

@@ -84,7 +84,12 @@ In the callback, you have the option to utilize a library called ```no-reducer``
 The "no-reducer" library has already been integrated into our library, making it readily available for use. To utilize it, simply call the library as follows: 
 
 ```js
-import state,{append} from "redux-server-state"
+import state,{replace} from "redux-server-state"
+
+//Example
+export const addNewItemToTop = (title) => state.post(`${API}/todos`,{title,completed:false},null,(res) =>
+        replace('todos',[res.data.pop(), ...res.data])
+)
 ```
 **Please refer to the "demo" section for a comprehensive understanding of how to handle various scenarios when coding.**
 ### Thanks

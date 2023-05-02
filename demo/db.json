@@ -13,12 +13,17 @@
     {
       "id": 3,
       "title": "Pick up dry cleaning",
-      "completed": false
+      "completed": true
     },
     {
       "id": 4,
       "title": "Schedule dentist appointment",
       "completed": false
+    },
+    {
+      "title": "This is new task",
+      "completed": false,
+      "id": 5
     }
   ]
 }

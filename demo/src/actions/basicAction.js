@@ -12,8 +12,7 @@ Therefore, the endpoint will be the name of the reducer.
 */
 export const getAllTodos = () => state.get(`${API}/todos`)
 
-export const addNewItem = (title) => state.post(`${API}/todos`,{title,completed:false}
-)
+export const addNewItem = (title) => state.post(`${API}/todos`,{title,completed:false})
 
 
 

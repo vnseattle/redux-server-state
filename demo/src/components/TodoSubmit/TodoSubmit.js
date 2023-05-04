@@ -1,6 +1,7 @@
 import React, {useState } from 'react';
 import { connect } from "react-redux";
-import {addNewItem , addNewItemToTop, createSquidGameTasks, clearTheTask, insertSubTaskToId2, updateTheTaskId2, removeTheTaskId2, appendToTodoList} from "./../../actions/basicAction"
+import { getAllTodos, addNewItem , addNewItemToTop} from "./../../actions/basicAction"
+import { createSquidGameTasks, clearTheTask, insertSubTaskToId2, updateTheTaskId2, removeTheTaskId2, appendToTodoList} from "./../../actions/noReducerAction"
 
 function TodoSubmit(props) {
   const [newTodo, setNewTodo] = useState(pickRandomTask(todoList));
@@ -44,10 +45,12 @@ function TodoSubmit(props) {
           Add To Database
         </button>
       </div>
-      <div style={{padding:'5px'}}> --- Custom Actions --- </div>
+      <div style={{padding:'5px'}}> --- Custom actions --- </div>
       <button onClick={handleAddTodoOnTop} className="button2">
           Add To Top (temporary)
       </button>
+
+      <div style={{padding:'5px'}}> --- Modifying state actions  --- </div>
       <button onClick={()=>props.createSquidGameTasks()} className="button2">
           Create Squid Game Task (temporary)
       </button>
@@ -66,6 +69,11 @@ function TodoSubmit(props) {
       <button onClick={()=>props.appendToTodoList()} className="button2" >
           Append all Squid Game Tasks to the ist (temporary)
       </button>
+
+      <div style={{padding:'5px'}}> --- Refresh --- </div>
+      <button onClick={()=>props.getAllTodos()} className="button" >
+          Get All Todos from DB
+      </button>
      
 
      
@@ -73,7 +81,7 @@ function TodoSubmit(props) {
   );
 }
 
-export default connect(null,{addNewItem, addNewItemToTop, createSquidGameTasks, clearTheTask, insertSubTaskToId2 , updateTheTaskId2, removeTheTaskId2, appendToTodoList})(TodoSubmit);
+export default connect(null,{ getAllTodos ,addNewItem, addNewItemToTop, createSquidGameTasks, clearTheTask, insertSubTaskToId2 , updateTheTaskId2, removeTheTaskId2, appendToTodoList})(TodoSubmit);
 
 
 

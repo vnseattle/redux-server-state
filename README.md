@@ -3,7 +3,7 @@ Redux-server-state is a tool for Redux that transforms API request outcomes into
 
 ![](https://raw.githubusercontent.com/vnseattle/redux-server-state/main/document/redux-server-state.png)
 
-# [LIVE DEMO  - Todo List ](https://github.com/vnseattle/redux-server-state/tree/main/demo ) 
+# [DEMO  - Todo List ](https://github.com/vnseattle/redux-server-state/tree/main/demo ) 
 # FULL
 # Installing
 ```js

@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import React, { useEffect, memo } from 'react';
 import { connect } from "react-redux";
+import TodoItem from './TodoItem';
+import { getAllTodos } from "./../../actions/basicAction"
 
-import { getAllTodos, setCompletedItem, deleteItem  } from "./../../actions/basicAction"
+
+
 
 function TodoList(props) {
-  const [page,setPage] = useState(1);
 
   useEffect(()=>{
     // Get list 
@@ -13,55 +14,14 @@ function TodoList(props) {
   },[])
 
 
-  const handleToggleComplete = (todo) => {
-    props.setCompletedItem(todo)
-    
-  };
-
-  const handleDeleteTodo = (todo) => {
-    props.deleteItem(todo)
-  };
-
-  const handleGetTodos = () => {
-    props.appendTodos(page+1); 
-    setPage(page+1)
-  }
-
-  
-
   return (
     <div className="container">
       <h1 className="heading">Todo List</h1>
-      <TransitionGroup component="ul" className="todo-list">
-        {props.serverState?.todos?.map((todo) => (
-          <CSSTransition key={todo.id} timeout={300} classNames="item">
-            <li className="todo-item">
-            
-              <input
-                type="checkbox"
-                checked={todo.completed}
-                onChange={() => handleToggleComplete(todo)}
-                className="checkbox"
-              />
-              <span style={{marginRight:'5px'}}>
-                {todo.id}
-              </span>
-
-              <span className={todo.completed ? 'completed' : null}>
-                {todo.title}
-              </span>
-              <button
-                onClick={() => handleDeleteTodo(todo)}
-                className="delete-button"
-              >
-                Delete
-              </button>
-            </li>
-          </CSSTransition>
-        ))}
-      </TransitionGroup>
+      <div className="todo-list">
+        {props.serverState?.todos?.map((todo) => <TodoItem todo={todo}/>)}
+      </div>
     </div>
   );
 }
 
-export default connect(state=>state,{getAllTodos, setCompletedItem, deleteItem})(TodoList);
+export default connect(state=>state,{getAllTodos})(TodoList,(prv,next)=>JSON.stringify(prv.serverState.todos)===JSON.stringify(next.serverState.todos));

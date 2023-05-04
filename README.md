@@ -79,7 +79,7 @@ Since the tool relies on ```Axios``` as a dependency, you can include the Axios 
 **Please refer to the "demo" section for a comprehensive understanding of how to handle various scenarios when coding.**
 
 ##### Callback*
-In the callback, you have the option to utilize a library called ```no-reducer```, which simplifies the process of building state by eliminating the need to write reducers manually. This library can significantly speed up the development process. Feel free to check it out at https://github.com/vnseattle/no-reducer.
+In the callback, you can use a library called ```no-reducer```, which simplifies the process of building state by eliminating the need to write reducers manually. This library can significantly speed up the development process. Feel free to check it out at https://github.com/vnseattle/no-reducer.
 
 The "no-reducer" library has already been integrated into our library, making it readily available for use. To utilize it, simply call the library as follows: 
 

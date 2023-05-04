@@ -102,6 +102,26 @@
   }
 
   .button2 {
-    background: #c18e31;
-    margin-right: 5px;
+    background: #005629;
+    margin: 5px 5px 5px 0px;
+    padding: 5px;
+    width: 100%;
+  }
+
+  .button3 {
+    background: #11a29b;
+    margin: 5px 5px 5px 0px;
+    padding: 5px;
+    width: 100%;
+  }
+  .button4 {
+    background: #d27737;
+    margin: 5px 5px 5px 0px;
+    padding: 5px;
+    width: 100%;
+  }
+  .subTask{
+    margin: 15px;
+    padding: 5px;
+    background: #8dff8d;
   }

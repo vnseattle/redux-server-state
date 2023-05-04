@@ -4,7 +4,6 @@ Redux-server-state is a tool for Redux that transforms API request outcomes into
 ![](https://raw.githubusercontent.com/vnseattle/redux-server-state/main/document/redux-server-state.png)
 
 # [DEMO  - Todo List ](https://github.com/vnseattle/redux-server-state/tree/main/demo ) 
-# FULL
 # Installing
 ```js
 npm i redux-server-state
@@ -88,7 +87,7 @@ import state,{replace} from "redux-server-state"
 
 //Example
 export const addNewItemToTop = (title) => state.post(`${API}/todos`,{title,completed:false},null,(res) =>
-        replace('todos',[res.data.pop(), ...res.data])
+        replace('todos',[res.data.pop(), ...res.data]) // this is a callback function
 )
 ```
 **Please refer to the "demo" section for a comprehensive understanding of how to handle various scenarios when coding.**

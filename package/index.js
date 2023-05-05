@@ -1,13 +1,11 @@
-import { create } from 'no-reducer';
-import axios from "axios"
-
 /*************************************************************
 Redux Server State
 © 2023 Henry Nguyen a.k.a Dev9x
 This library is designed to retrieve the results from an API request 
 and store them as a state in the reducer on the client-side.
 ************************************************************/
-
+import {create as noCreate,clear as noClear,insert as noInsert ,update as noUpdate,remove as noRemove, replace as noReplace,append as noAppend} from 'no-reducer'
+import axios from "axios"
 
 // Object for making HTTP requests using different methods
 const stateRequest =  {
@@ -61,7 +59,7 @@ const handleCallback = (callback, res, url, config) => {
         if(callback){
             // If a callback function is provided, 
             //dispatch the callback with the response
-            dispatch(callback(res));
+            dispatch(callback(res,dispatch));
         }else{
             // If no callback function is provided, 
             // dispatch the handleReturn function with the URL, config, and response
@@ -121,4 +119,49 @@ const handleStateName = (url, object, config) => {
 
 export default stateRequest
 
-export {create,clear,insert,update,remove,replace,refresh,reducer,append } from 'no-reducer'
+export const append = (name,payload) =>{
+    return async (dispatch) => {
+        dispatch(noAppend(name,payload))
+    }
+}
+
+export const create = (name,payload) =>{
+    return async (dispatch) => {
+        dispatch(noCreate(name,payload))
+    }
+}
+
+export const replace = (name,payload) =>{
+    return async (dispatch) => {
+        dispatch(noReplace(name,payload))
+    }
+}
+
+export const clear = (name,value,target) =>{
+    return async (dispatch) => {
+        dispatch(noClear(name,value,target))
+    }
+}
+
+export const insert = (name,payloadName,payload,value,target) =>{
+    return async (dispatch) => {
+        dispatch(noInsert(name,payloadName,payload,value,target))
+    }
+}
+
+export const update = (name,payload,value,target) =>{
+    return async (dispatch) => {
+        dispatch(noUpdate(name,payload,value,target))
+    }
+}
+
+export const remove = (name,value,target) =>{
+    return async (dispatch) => {
+        dispatch(noRemove(name,value,target))
+    }
+}
+
+
+
+
+export {reducer} from 'no-reducer'

@@ -9,6 +9,8 @@
   "homepage": "https://github.com/vnseattle/redux-server-state/tree/main/package",
   "url": "https://github.com/vnseattle/redux-server-state/tree/main/demo",
   "keywords": [
+    "axios",
+    "redux-server-state",
     "no-reducer",
     "redux",
     "reactjs",

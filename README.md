@@ -84,6 +84,7 @@ The "no-reducer" library has already been integrated into our library, making it
 
 ```js
 import state,{replace} from "redux-server-state"
+// import {replace} from "no-reducer"
 
 //Example
 export const addNewItemToTop = (title) => state.post(`${API}/todos`,{title,completed:false},null,(res) =>

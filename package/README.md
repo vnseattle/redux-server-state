@@ -4,6 +4,7 @@ Redux-server-state is a tool for Redux that transforms API request outcomes into
 ![](https://raw.githubusercontent.com/vnseattle/redux-server-state/main/document/redux-server-state.png)
 
 # [DEMO  - Todo List ](https://github.com/vnseattle/redux-server-state/tree/main/demo ) 
+
 # Installing
 ```js
 npm i redux-server-state
@@ -78,7 +79,7 @@ You have two options to add to the configuration: "root" and "state."
 **Please refer to the "demo" section for a comprehensive understanding of how to handle various scenarios when coding.**
 
 ##### Callback*
-In the callback, you can use a library called ```no-reducer```, which simplifies the process of building state by eliminating the need to write reducers manually. This library can significantly speed up the development process. Feel free to check it out at https://github.com/vnseattle/no-reducer.
+In the callback, you can use a library called ```no-reducer```, which simplifies the process of building state by eliminating the need to write reducers manually. This library can significantly speed up the development process. Feel free to check it out at www.no-reducer.com
 
 The "no-reducer" library has already been integrated into our library, making it readily available for use. To utilize it, simply call the library as follows: 
 

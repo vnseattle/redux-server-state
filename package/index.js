@@ -4,15 +4,7 @@ Redux Server State
 This library is designed to retrieve the results from an API request 
 and store them as a state in the reducer on the client-side.
 ************************************************************/
-import { 
-    create as noCreate,
-    clear as noClear,
-    insert as noInsert,
-    update as noUpdate,
-    remove as noRemove, 
-    replace as noReplace,
-    append as noAppend
- } from 'no-reducer'
+import {create as noCreate,clear as noClear,insert as noInsert ,update as noUpdate,remove as noRemove, replace as noReplace,append as noAppend} from 'no-reducer'
 import axios from "axios"
 
 // Object for making HTTP requests using different methods

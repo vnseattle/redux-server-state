@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
-import { reducer } from './actions/redux-server-state';
+import { reducer } from 'redux-server-state';
 import { Provider } from 'react-redux';
 import thunk from "redux-thunk";
 

@@ -1,4 +1,4 @@
-import {create, clear, insert, update, remove, append} from "./redux-server-state"
+import {create, clear, insert, update, remove, append} from "redux-server-state"
 
 
 

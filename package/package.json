@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies":{
+    "axios": "~1.4.0",
+    "no-reducer": "~1.0.11"
+  },
   "homepage": "https://github.com/vnseattle/redux-server-state/tree/main/package",
   "url": "https://github.com/vnseattle/redux-server-state/tree/main/demo",
   "keywords": [

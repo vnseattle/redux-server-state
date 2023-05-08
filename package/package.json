@@ -1,6 +1,6 @@
 {
   "name": "redux-server-state",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Redux-server-state is a tool for Redux that transforms API request outcomes into Redux States",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,10 @@
     "state",
     "redux without reducers",
     "reduxless",
-    "dynamic-reducers"
+    "dynamic-reducers",
+    "server-state",
+    "no reducer",
+    "redux server state"
   ],
   "author": "dev9x",
   "license": "ISC"

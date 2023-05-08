@@ -72,8 +72,8 @@ export const postToDoList = () => state.post(
 You have two options to add to the configuration: "root" and "state."
 | |  |
 |----------|----------|
-|root | In some cases, the response from the endpoints may be wrapped within an object. In such situations, you can specify the exact object you want to assign as the state. |
-|state | At times, the response may return an array instead of an object. In such cases, it is necessary to assign a name to that array in order to transform it into an object. |
+|root | In some cases, the response from the endpoints may be wrapped within an object. In such situations, you can specify the exact object you want to assign as the state. Example: {root: 'data'} |
+|state | At times, the response may return an array instead of an object. In such cases, it is necessary to assign a name to that array in order to transform it into an object. Example: {state:'todos'}|
 |axios |Since the tool relies on ```Axios``` as a dependency, you can include the Axios configuration within this config as well.|
 
 **Please refer to the "demo" section for a comprehensive understanding of how to handle various scenarios when coding.**
